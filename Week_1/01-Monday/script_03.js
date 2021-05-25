@@ -124,9 +124,11 @@ const countriesWithRevenue = users.filter((user) => {
     return user.revenue >  0;
 });
 
-console.table(countriesWithRevenue.length);
+const listCountriesWithRevenue = countriesWithRevenue.map((arr) => {
+    return arr.country;
+});
 
-
+console.log(listCountriesWithRevenue);
 
 
 
