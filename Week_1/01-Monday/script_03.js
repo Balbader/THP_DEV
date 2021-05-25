@@ -119,18 +119,27 @@ console.log(`Total amount earned by France: $${amountEarnedbyEngland / 100}`);
 
 //==============================================================================
 /* Liste de tous les pays ou on a gagner de l'argent */
-
+// filter all countries with revenue
 const countriesWithRevenue = users.filter((user) => {
     return user.revenue >  0;
 });
 
+// Fetch only country names
 const listCountriesWithRevenue = countriesWithRevenue.map((arr) => {
     return arr.country;
 });
 
-console.log(listCountriesWithRevenue);
+// Removing all duplicates from list
+const removeDuplicates = [...new Set(listCountriesWithRevenue)];
 
+// Reorder List Alphabetically
+removeDuplicates.sort((a, b) => {
+    return a === b ? 0 : a < b ? -1 : 1;
+});
+console.table(removeDuplicates);
 
+//==============================================================================
+/* Quels sont nos 5 utilisateurs qui nous ont rapporté le plus d'agent ? */
 
 
 
