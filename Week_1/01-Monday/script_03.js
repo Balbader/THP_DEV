@@ -44,7 +44,7 @@ const amountEarned = franceUsers.reduce((result, user) => {
     return result += user.revenue;
 }, 0);
 
-console.log(`Total amount earned by France: $${amountEarned}`);
+console.log(`Total amount earned by France: $${amountEarned / 100}`);
 
 
 //==============================================================================
@@ -65,6 +65,86 @@ const frenchPayingUsers = franceUsers.reduce((count, user) => {
 }, 0);
 
 console.log(`French Paying Users: ${frenchPayingUsers}`);
+
+
+//==============================================================================
+/* Donne-moi le chiffre d'affaires réparti dans nos 4 pays les plus représentés
+ * (Allemagne, États-Unis, France, Grande-Bretagne)
+ * (chiffre d'affaires total, en France, aux États-Unis, etc.) */
+
+//France
+const franceRevenue = users.filter((user) => {
+    return user.country === "France";
+});
+
+const amountEarnedbyFrance = franceRevenue.reduce((result, user) => {
+    return result += user.revenue;
+}, 0);
+
+console.log(`Total amount earned by France: $${amountEarnedbyFrance / 100}`);
+
+//Germany
+const germanyRevenue = users.filter((user) => {
+    return user.country === "Germany";
+});
+
+const amountEarnedbyGermany = germanyRevenue.reduce((result, user) => {
+    return result += user.revenue;
+}, 0);
+
+console.log(`Total amount earned by Germany: $${amountEarnedbyGermany / 100}`);
+
+//USA
+const usaRevenue = users.filter((user) => {
+    return user.country === "United States";
+});
+
+const amountEarnedbyUsa = usaRevenue.reduce((result, user) => {
+    return result += user.revenue;
+}, 0);
+
+console.log(`Total amount earned by USA: $${amountEarnedbyUsa / 100}`);
+
+//England
+const englandRevenue = users.filter((user) => {
+    return user.country === "Great Britain";
+});
+
+const amountEarnedbyEngland = englandRevenue.reduce((result, user) => {
+    return result += user.revenue;
+}, 0);
+
+console.log(`Total amount earned by France: $${amountEarnedbyEngland / 100}`);
+
+
+//==============================================================================
+/* Liste de tous les pays ou on a gagner de l'argent */
+
+const countriesWithRevenue = users.filter((user) => {
+    return user.revenue >  0;
+});
+
+console.table(countriesWithRevenue.length);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
