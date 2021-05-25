@@ -141,6 +141,11 @@ console.table(removeDuplicates);
 //==============================================================================
 /* Quels sont nos 5 utilisateurs qui nous ont rapporté le plus d'agent ? */
 
+countriesWithRevenue.sort((a, b) => {
+    return a === b ? 0 : a < b ? -1 : 1;
+});
+console.log(countriesWithRevenue);
+
 
 
 
