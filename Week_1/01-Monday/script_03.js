@@ -54,6 +54,17 @@ const totFrenchUsers = franceUsers.length;
 console.log(`Total number of France users: ${totFrenchUsers}`);
 
 
+//==============================================================================
+/* Parmi ces utilisateurs, combien avons-nous de clients payants en France ? */
+
+const frenchPayingUsers = franceUsers.reduce((count, user) => {
+    if (user.revenue > 0) {
+        count++;
+    }
+    return count;
+}, 0);
+
+console.log(`French Paying Users: ${frenchPayingUsers}`);
 
 
 
