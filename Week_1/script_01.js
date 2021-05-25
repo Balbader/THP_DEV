@@ -19,3 +19,48 @@ const entrepreneurs = [
   { first: 'Peter', last: 'Thiel', year: 1967 }
 ];
 
+//==============================================================================
+/*EX-1: Sors une array qui ne contient que le nom et le prenom */
+
+const temp = entrepreneurs;
+for (let i = 0; i < temp.length; i++) {
+    delete temp[i].year;
+};
+//console.log(temp);
+
+
+//==============================================================================
+/*EX-2: Pour chaque entrepreneur, remplace la date de naissance par l'âge de
+        l'entrepreneur qu'il aurait aujourd'hui. */
+
+const currentYear = new Date().getFullYear();
+let currentAge;
+for (let i = 0; i < entrepreneurs.length; i++) {
+    currentAge = currentYear - entrepreneurs[i].year;
+    entrepreneurs[i].age = currentAge;
+    //delete entrepreneurs[i].year;
+};
+
+console.log(entrepreneurs);
+
+
+//==============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
