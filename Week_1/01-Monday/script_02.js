@@ -65,12 +65,21 @@ const leastRented = books.reduce((result, book) => {
 /* EX-5: Supprime le livre avec l'ID 133712 */
 
 const deleteBook = books.filter((book) => {
-    if (book.id === 133721)
-        delete book;
+    return book.id !== 133712;
 });
 
 console.log(deleteBook);
 
+/*
+const deleteBook = (arr) => {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].id === 133721){
+            delete arr[i];
+        }
+    }
+    return arr;
+};
 
-
-
+deleteBook(books);
+console.log(books);
+*/
