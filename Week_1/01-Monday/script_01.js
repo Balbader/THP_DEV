@@ -21,11 +21,27 @@ const entrepreneurs = [
 
 //==============================================================================
 /* EX-1: Sors une array qui ne contient que le nom et le prenom */
+/*
+const temp = [];
 
-const temp = entrepreneurs;
+for (let i = 0; i < entrepreneurs.length; i++) {
+    // create a copy of entrepreneurs[] array without referencing the entrepreneurs[] array itself
+    // This will allow to alter the temp[] without altering the entrepreneurs[] array
+    temp.push({...entrepreneurs[i]});
+}
+
 for (let i = 0; i < temp.length; i++) {
     delete temp[i].year;
-};
+}
+console.log(temp);
+*/
+const temp = entrepreneurs.map((entrepreneur) => {
+    return {...entrepreneur};
+});
+
+temp.forEach((entrepreneur) => {
+    delete entrepreneur.year;
+});
 //console.log(temp);
 
 
@@ -33,34 +49,34 @@ for (let i = 0; i < temp.length; i++) {
 /* EX-2: Pour chaque entrepreneur, remplace la date de naissance par l'âge de
         l'entrepreneur qu'il aurait aujourd'hui. */
 
+//const newObject = {age: currentYear - entrepreneur.year}
 const currentYear = new Date().getFullYear();
 let currentAge;
-for (let i = 0; i < entrepreneurs.length; i++) {
-    currentAge = currentYear - entrepreneurs[i].year;
-    entrepreneurs[i].age = currentAge;
-    //delete entrepreneurs[i].year;
-};
-
-console.log(entrepreneurs);
+const newArr = entrepreneurs.map((entrepreneur) => {
+    const res = {...entrepreneur, age: currentYear - entrepreneur.year};
+    delete res.year;
+    return res;
+});
+//console.log(newArr);
 
 
 //==============================================================================
+/* EX-3: Les clés first et last manquent de lisibilité,
+ * remplace-les par firstName et lastName */
+
+const changePropName = newArr.map((entrepreneur) => {
+    const {first, last, ...rest} = entrepreneur;
+    return {firstName: first, lastName: last, ...rest};
+});
+
+//console.log(changePropName);
 
 
+//==============================================================================
+/* EX-4: Filtre dans cette liste les entrepreneurs qui sont nés dans les années 70 */
 
+const filterAge = entrepreneurs.filter((entrepreneur) => {
+    return (entrepreneur.year >= 1970) && (entrepreneur.year < 1980)
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(filterAge);
