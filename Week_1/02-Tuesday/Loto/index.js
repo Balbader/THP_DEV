@@ -1,3 +1,5 @@
+console.log('Test');
+
 // Define a random number
 const pullRandomNumberInclusive = (min, max) => {
     min = Math.ceil(min);
@@ -21,22 +23,32 @@ const storeRandomNumber = () => {
 
 // Function to check if win or lose
 const checkLoto = (firstName, lastName, email, lotoNumber) => {
-    const message = document.getElementById('message');
+    const message = document.getElementById("message");
     const emailRegex = new RegExp('([A-Za-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,3})$');
     const draw = pullRandomNumber();
 
     // check if conditions are met when filling the form
     if (firstName === "") {
-        return message.innerHTML = "Veuillez renseigner un prénom";
+        alert("Veuillez renseigner un prénom");
+        console.log("Veuillez renseigner un prénom");
+        //return message.innerHTML = "Veuillez renseigner un prénom";
     } else if (lastName === "") {
-        return message.innerHTML = "Veuillez renseigner un nom";
+        alert("Veuillez renseigner un nom");
+        console.log("Veuillez renseigner un nom");
+        //return message.innerHTML = "Veuillez renseigner un nom";
     } else if (!emailRegex.test(email) || email.length < 8 || email.length > 30) {
-        return message.innerHTML = "Mauvais format d'email";
+        alert("Mauvais format d'email");
+        console.log("Mauvais format d'email");
+        //return message.innerHTML = "Mauvais format d'email";
     } else if (loto.length != 6) {
-        return message.innerHTML = "Vous devez jouer 6 chifres de lotos";
+        alert("Vous devez jouer 6 chifres de lotos");
+        console.log("Vous devez jouer 6 chifres de lotos");
+        //return message.innerHTML = "Vous devez jouer 6 chifres de lotos";
     } for (let i = 0; i < loto.length; i++) {
         if (!(draw.includes(parseInt(loto[i])))) {
-            return message.innerHTML = `Perdu ! Les bons numéros sont ${draw.toString()}`;
+            alert(`Perdu ! Les bons numéros sont ${draw.toString()}`);
+            console.log(`Perdu ! Les bons numéros sont ${draw.toString()}`);
+            //return message.innerHTML = `Perdu ! Les bons numéros sont ${draw.toString()}`;
         }
     }
     message.innerHTML = "Félicitation ! Vous avez gagné 1 million !!!!!!";
@@ -45,13 +57,13 @@ const checkLoto = (firstName, lastName, email, lotoNumber) => {
 
 // Function to fetch the input information and check its value
 const checkFormSubmit = () => {
-    firstName = document.getElementById("#firstName").value;
-    lastName = document.getElementById("#lastName").value;
-    email = document.getElementById("#email").value;
-    lotoNumber = document.getElementById("#lotoNumber").value;
+    firstName = document.getElementById("firstName").value;
+    lastName = document.getElementById("lastName").value;
+    email = document.getElementById("email").value;
+    lotoNumber = document.getElementById("lotoNumber").value;
 
     checkLoto(firstName, lastName, email, lotoNumber.split(","));
 }
 
 // Fetch the input from html form
-document.getElementById('submit').onclick = checkFormSubmit;
+document.getElementById("submit").onclick = checkFormSubmit;
