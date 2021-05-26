@@ -82,7 +82,7 @@ const amountEarnedByCountry = (countryName) => {
     }, 0);
 };
 /*
-    //France
+//France
 const amountEarnedbyFrance = amountEarnedByCountry("France");
 console.log(`Total amount earned by France: $${amountEarnedbyFrance / 100}`);
 
