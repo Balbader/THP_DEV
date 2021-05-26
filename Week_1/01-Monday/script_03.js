@@ -72,60 +72,51 @@ console.log(`French Paying Users: ${frenchPayingUsers}`);
  * (Allemagne, États-Unis, France, Grande-Bretagne)
  * (chiffre d'affaires total, en France, aux États-Unis, etc.) */
 
-//France
-const franceRevenue = users.filter((user) => {
-    return user.country === "France";
-});
-
-const amountEarnedbyFrance = franceRevenue.reduce((result, user) => {
-    return result += user.revenue;
-}, 0);
-
+// Version without forEach()
+const amountEarnedByCountry = (countryName) => {
+    const revenue = users.filter((user) => {
+        return user.country === countryName;
+    });
+    return revenue.reduce((result, user) => {
+        return result += user.revenue;
+    }, 0);
+};
+/*
+    //France
+const amountEarnedbyFrance = amountEarnedByCountry("France");
 console.log(`Total amount earned by France: $${amountEarnedbyFrance / 100}`);
 
 //Germany
-const germanyRevenue = users.filter((user) => {
-    return user.country === "Germany";
-});
-
-const amountEarnedbyGermany = germanyRevenue.reduce((result, user) => {
-    return result += user.revenue;
-}, 0);
-
+const amountEarnedbyGermany = amountEarnedByCountry("Germany");
 console.log(`Total amount earned by Germany: $${amountEarnedbyGermany / 100}`);
 
 //USA
-const usaRevenue = users.filter((user) => {
-    return user.country === "United States";
-});
-
-const amountEarnedbyUsa = usaRevenue.reduce((result, user) => {
-    return result += user.revenue;
-}, 0);
-
+const amountEarnedbyUsa = amountEarnedByCountry("United States");
 console.log(`Total amount earned by USA: $${amountEarnedbyUsa / 100}`);
 
 //England
-const englandRevenue = users.filter((user) => {
-    return user.country === "Great Britain";
+const amountEarnedbyEngland = amountEarnedByCountry("Great Britain");
+console.log(`Total amount earned by England: $${amountEarnedbyEngland / 100}`);
+*/
+
+// Version with forEach()
+const arr = ["France", "Germany", "United States", "Great Britain"];
+arr.forEach((countryName) => {
+    const amountEarned = amountEarnedByCountry(countryName);
+    console.log(`Total amount earned by ${countryName}: $${amountEarned / 100}`);
 });
-
-const amountEarnedbyEngland = englandRevenue.reduce((result, user) => {
-    return result += user.revenue;
-}, 0);
-
-console.log(`Total amount earned by France: $${amountEarnedbyEngland / 100}`);
 
 
 //==============================================================================
 /* Liste de tous les pays ou on a gagner de l'argent */
+
 // filter all countries with revenue
-const countriesWithRevenue = users.filter((user) => {
-    return user.revenue >  0;
+const usersWithRevenue = users.filter((user) => {
+    return user.revenue > 0;
 });
 
 // Fetch only country names
-const listCountriesWithRevenue = countriesWithRevenue.map((arr) => {
+const listCountriesWithRevenue = usersWithRevenue.map((arr) => {
     return arr.country;
 });
 
@@ -136,12 +127,65 @@ const removeDuplicates = [...new Set(listCountriesWithRevenue)];
 removeDuplicates.sort((a, b) => {
     return a === b ? 0 : a < b ? -1 : 1;
 });
-console.table(removeDuplicates);
+//console.table(removeDuplicates);
 
 //==============================================================================
 /* Quels sont nos 5 utilisateurs qui nous ont rapporté le plus d'agent ? */
-
-countriesWithRevenue.sort((a, b) => {
-    return a === b ? 0 : a < b ? -1 : 1;
+// filter out all non french spenders
+const frenchSpenders = usersWithRevenue.filter((user) => {
+    return user.country === "France";
 });
-console.log(countriesWithRevenue);
+
+// sort them in decreasing order
+frenchSpenders.sort((a, b) => {
+    return a.revenue === b.revenue ? 0 : a.revenue > b.revenue ? -1 : 1;
+});
+
+// slice to keep the top 5
+const top5 = frenchSpenders.slice(0, 5);
+console.table(top5);
+
+
+//==============================================================================
+/* Gagnons-nous plus d'argent auprès des hommes, ou des femmes ? */
+// split the db based on user.gender
+const maleUsers = usersWithRevenue.filter((user) => {
+    return user.sex === "M";
+});
+
+const femaleUsers = usersWithRevenue.filter((user) => {
+    return user.sex === "F";
+});
+
+const totMaleSpending = maleUsers.reduce((count, user) => {
+    return Math.floor((count += user.revenue) / 100);
+}, 0);
+
+const totFemaleSpending = femaleUsers.reduce((count, user) => {
+    return Math.floor((count += user.revenue) / 100);
+}, 0);
+
+console.log(totMaleSpending > totFemaleSpending ? `Male Users spent more with $${totMaleSpending}` : `Female Users spent more with $${totFemaleSpending}`);
+
+
+//==============================================================================
+/* Sors-moi les utilisateurs ayant rapporté au moins 75€ */
+
+const over75 = usersWithRevenue.filter((user) => {
+    return user.revenue >= 7500;
+});
+
+//console.table(over75);
+
+
+//==============================================================================
+/* Parmi nos 100 premiers utilisateurs, quel est le pourcentage qui sont des clients payants ? */
+
+const top100 = users.slice(0, 100);
+
+const top100WithRevenue = top100.filter((user) => {
+    return user.revenue;
+});
+
+const percentTop100Paying = top100WithRevenue.length + " %";
+console.log(percentTop100Paying);
