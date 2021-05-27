@@ -11,9 +11,5 @@ class Assassin extends Character {
         this.mana = this.mana;
         this.dmg = this.dmg + 1;
         this.hp = this.hp;
-        /* add last prop:
-         * The attack can be invoked as many times as desired
-         * Each time it is invoked, it add +1 to Ivar's dmg point
-         */
     }
 }
