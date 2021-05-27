@@ -11,10 +11,8 @@ class Player {
 const player_1 = new Player("basil", 20, 10, 30, 50);
 const player_2 = new Player("mimi", 40, 2, 45,  150);
 
-/*
 console.log(player_1);
 console.log(player_2);
-*/
 
 
 class NewPlayer extends Player {
