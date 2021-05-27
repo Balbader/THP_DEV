@@ -41,6 +41,7 @@ class Character {
             if(victim <= 0) {
                 victim.state = LOSER;
                 console.log(`${this.name} killed ${victim.name}.`);
+                this.winMana();
             }
             return this.dmg;
         } else {
@@ -78,25 +79,19 @@ class Character {
         }
         return this.mana;
     }
+}
 
+Character.instances = [];
 
+Character.findPlayersStillAlive() {
+    return Character.instances.filter((player) => {
+        player.state === PLAYING;
+    });
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Character.selectRandomPlayer() {
+    let newTeamPlayers = Character.instances.filter((player) => {
+        player.state != LOSER;
+    });
+    return newTeamPlayers.sort(() => Math.random() - 0.5);
 }
