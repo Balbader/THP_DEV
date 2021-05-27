@@ -12,7 +12,7 @@ class Character {
     }
 
     /* Function to check Player life status*/
-    isPlayerAlive() {
+    isAlive() {
         if (this.hp > 0) {
             return true;
         } else {
