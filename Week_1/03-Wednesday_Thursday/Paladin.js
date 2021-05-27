@@ -1,3 +1,5 @@
+import Character from "./Character.js";
+
 class Paladin extends Character {
     constructor(hp = 16, dmg = 3, mana = 160, state, name = "Bjorn The Healer") {
         super(hp, dmg, mana, state, name)
