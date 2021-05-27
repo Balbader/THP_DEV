@@ -1,3 +1,5 @@
+import Character from "./Character.js";
+
 class Monk extends Character {
     constructor(hp = 8, dmg = 2, mana = 200, state, name = "Torvi The Monk") {
         super(hp, dmg, mana, state, name)
