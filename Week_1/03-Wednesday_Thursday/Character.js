@@ -1,3 +1,5 @@
+export Character from "./Character.js";
+
 const LOSER = "Loser";
 const WINNER = "Winner";
 const PLAYING = "Playing";
