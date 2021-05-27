@@ -21,7 +21,7 @@ class Character {
         }
     }
 
-    /* Function to take damage and check damage level */
+    /* Function to take damage and check damage level(a.k.a dead or alive?) */
     takeDamage(damage) {
         if (this.isPlayerAlive()) {
             this.hp -= damage;
@@ -40,7 +40,7 @@ class Character {
 
             if(victim <= 0) {
                 victim.state = LOSER;
-                console.log(`${this.name} killed ${victim.name}.`);
+                console.log(`${this.name} killed ${victim.name}. ${this.name} won 20 mana points.`);
                 this.winMana();
             }
             return this.dmg;
@@ -49,6 +49,7 @@ class Character {
         }
     }
 
+    /* Re-initiate original mana points for next turn and add 20 mana points to winner */
     winMana() {
         this.mana += 20;
         let playerCategory;
@@ -81,14 +82,17 @@ class Character {
     }
 }
 
+// Initiate empty array to store new charachters for each turn
 Character.instances = [];
 
+// Look for characters still alive during current turn
 Character.findPlayersStillAlive() {
     return Character.instances.filter((player) => {
         player.state === PLAYING;
     });
 }
 
+// Randomly creating new team with random order
 Character.selectRandomPlayer() {
     let newTeamPlayers = Character.instances.filter((player) => {
         player.state != LOSER;
