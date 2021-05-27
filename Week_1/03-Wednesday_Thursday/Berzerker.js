@@ -1,3 +1,5 @@
+import Character from "./Character.js";
+
 class Berzerker extends Character {
     constructor(hp = 8, dmg = 4, mana = 0, state, name = "Ivar The Berzerker") {
         super(hp, dmg, mana, state, name)
