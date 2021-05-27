@@ -1,14 +1,14 @@
-class Paladin extends Character {
-    constructor(hp = 15, dmg = 7, mana = 400, state, name = "Bjorn The Healer") {
+class Monk extends Character {
+    constructor(hp = 8, dmg = 2, mana = 200, state, name = "Torvi The Monk") {
         super(hp, dmg, mana, state, name)
     }
 
-    // Create Bjorn special attack
-    serumOfLife(victim) {
+    // Create Torvi special attack
+    heal(victim) {
         console.log(`!!! ${this.name} invoked their special attack !!!`);
         let damage = 5;
         victim.takeDamage(damage);
-        this.hp = this.hp + 10;
-        this.mana = this.mana - 100;
+        this.hp = this.hp + 8;
+        this.mana = this.mana - 25;
     }
 }
