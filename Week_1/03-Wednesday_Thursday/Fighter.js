@@ -1,3 +1,5 @@
+import Character from "./Character.js";
+
 class Fighter extends Character {
     constructor(hp = 12, dmg = 4, mana = 40, state, name = "Grace") {
         super(hp, dmg, mana, state, name)
