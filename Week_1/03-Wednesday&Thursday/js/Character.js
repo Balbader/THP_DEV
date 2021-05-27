@@ -1,9 +1,9 @@
 const LOSER = "Loser";
 const WINNER = "Winner";
-const ALIVE = "Still Alive";
+const PLAYING = "Playing";
 
 class Character {
-    constructor(hp, dmg, mana, state = ALIVE, name) {
+    constructor(hp, dmg, mana, state = PLAYING, name) {
         this.hp = hp;
         this.dmg = dmg;
         this.mana = mana;
@@ -27,14 +27,76 @@ class Character {
             this.hp -= damage;
             console.log(`${this.name} have ${this.hp} Health Points remaining.`);
         } else {
-            this.stat = LOSER;
+            this.state = LOSER;
             console.log(`${this.name} is dead :(`);
         }
     }
 
     /* Function to inflict damage */
-    inflictDamage(victim) {
+    dealDamage(victim) {
         console.log(`${this.name} is attacking ${victim.name} and is inflicting them ${this.dmg} Points.`);
-        victim.takeDamage(this.dmg);
+        if (victim.isPlayerAlive()) {
+            victim.hp -= this.dmg;
+
+            if(victim <= 0) {
+                victim.state = LOSER;
+                console.log(`${this.name} killed ${victim.name}.`);
+            }
+            return this.dmg;
+        } else {
+            console.log("Player is dead. Can't run attack.")
+        }
     }
+
+    winMana() {
+        this.mana += 20;
+        let playerCategory;
+        if (playerClass === 'Assassin') {
+            if (this.mana >= 20){
+                this.mana = 20;
+            }
+        }
+        if (playerClass === 'Berzerker') {
+            if (this.mana > 0){
+                this.mana = 0;
+            }
+        }
+        if (playerClass === 'Fighter') {
+            if (this.mana >= 40){
+                this.mana = 40;
+            }
+        }
+        if (playerClass === 'Monk') {
+            if (this.mana >= 200){
+                this.mana = 200;
+            }
+        }
+        if (playerClass === 'Paladin') { 
+            if (this.mana > 160){
+                this.mana = 160;
+            }
+        }
+        return this.mana;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
