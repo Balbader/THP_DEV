@@ -1,10 +1,8 @@
-export Character from "./Character.js";
-
 const LOSER = "Loser";
 const WINNER = "Winner";
 const PLAYING = "Playing";
 
-class Character {
+export default class Character {
     constructor(hp, dmg, mana, state = PLAYING, name) {
         this.hp = hp;
         this.dmg = dmg;
@@ -82,22 +80,25 @@ class Character {
         }
         return this.mana;
     }
+
+    // Look for characters still alive during current turn
+    static findPlayersStillAlive() {
+        return Character.instances.filter((player) => {
+            player.state === PLAYING;
+        });
+    }
+
+    // Randomly creating new team with random order
+    static selectRandomPlayer() {
+        let newTeamPlayers = Character.instances.filter((player) => {
+            player.state != LOSER;
+        });
+        return newTeamPlayers.sort(() => Math.random() - 0.5);
+    }
 }
 
 // Initiate empty array to store new charachters for each turn
 Character.instances = [];
 
-// Look for characters still alive during current turn
-Character.findPlayersStillAlive = () => {
-    return Character.instances.filter((player) => {
-        player.state === PLAYING;
-    });
-}
 
-// Randomly creating new team with random order
-Character.selectRandomPlayer() {
-    let newTeamPlayers = Character.instances.filter((player) => {
-        player.state != LOSER;
-    });
-    return newTeamPlayers.sort(() => Math.random() - 0.5);
-}
+
