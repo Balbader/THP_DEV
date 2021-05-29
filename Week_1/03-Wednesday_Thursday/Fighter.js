@@ -1,6 +1,6 @@
 import Character from "./Character.js";
 
-class Fighter extends Character {
+export default class Fighter extends Character {
     constructor(hp = 12, dmg = 4, mana = 40, state, name = "Grace") {
         super(hp, dmg, mana, state, name)
     }
@@ -18,7 +18,3 @@ class Fighter extends Character {
         }
     }
 }
-
-let grace = new Fighter();
-Character.instances.push(grace);
-console.log(grace.name);
