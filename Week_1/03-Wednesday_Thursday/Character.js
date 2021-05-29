@@ -95,10 +95,7 @@ export default class Character {
         });
         return newTeamPlayers.sort(() => Math.random() - 0.5);
     }
+
+    // Initiate empty array to store new charachters for each turn
+    static instances = [];
 }
-
-// Initiate empty array to store new charachters for each turn
-Character.instances = [];
-
-
-
