@@ -3,7 +3,7 @@ import Fighter from "./Fighter.js";
 import Berzerker from "./Berzerker.js";
 import Assassin from "./Assassin.js";
 import Monk from "./Monk.js";
-//import Paladin from "./Paladin.js";
+import Paladin from "./Paladin.js";
 //import Game from "./Game.js";
 
 // Fighter
@@ -21,4 +21,8 @@ Character.instances.push(moana);
 //Assassin
 let carl = new Assassin;
 Character.instances.push(carl);
+
+//Paladin
+let ulder = new Paladin;
+Character.instances.push(ulder);
 console.table(Character.instances);
