@@ -1,7 +1,7 @@
 const data = {
     "articles": [
         {
-            "titre": "Devenir influenceur en 2020, tous nos conseils (la 4ème va vous étonner",
+            "titre": "Devenir influenceur en 2020, tous nos conseils (la 4ème va vous étonner :)",
             "tags": [
                 "twitch",
                 "influenceur"
