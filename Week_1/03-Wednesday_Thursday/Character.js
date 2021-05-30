@@ -81,14 +81,14 @@ export default class Character {
         return this.mana;
     }
 
-    // Look for characters still alive during current turn
+    /* Look for characters still alive during current turn */
     static findPlayersStillAlive() {
         return Character.instances.filter((player) => {
-            player.state === PLAYING;
+            player.state === "Playing";
         });
     }
 
-    // Randomly creating new team with random order
+    /* Select player that are still alive for next turn */
     static selectRandomPlayer() {
         let newTeamPlayers = Character.instances.filter((player) => {
             player.state != LOSER;
@@ -96,6 +96,6 @@ export default class Character {
         return newTeamPlayers.sort(() => Math.random() - 0.5);
     }
 
-    // Initiate empty array to store new charachters for each turn
+    /* Initiate empty array to store new charachters for each turn */
     static instances = [];
 }
