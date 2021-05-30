@@ -33,22 +33,22 @@ export default class Game {
         };
 
         if (playerClass === "assassin") {
-            let newPlayer = new Fighter(`${newPlayerName}`);
+            let newPlayer = new Assassin(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
 
         if (playerClass === "monk") {
-            let newPlayer = new Fighter(`${newPlayerName}`);
+            let newPlayer = new Monk(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
 
         if (playerClass === "paladin") {
-            let newPlayer = new Fighter(`${newPlayerName}`);
+            let newPlayer = new Paladin(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
 
         if (playerClass === "berzerker") {
-            let newPlayer = new Fighter(`${newPlayerName}`);
+            let newPlayer = new Berzerker(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
     }
