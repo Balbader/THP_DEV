@@ -1,8 +1,9 @@
 import Character from "./Character.js";
 
 export default class Paladin extends Character {
-    constructor(hp = 16, dmg = 3, mana = 160, state, name = "Ulder") {
+    constructor(hp = 16, dmg = 3, mana = 160, state, name = "Ulder", specialAttack = "healingLighing") {
         super(hp, dmg, mana, state, name)
+        this.specialAttack = specialAttack;
     }
 
     // Create Ulder special attack

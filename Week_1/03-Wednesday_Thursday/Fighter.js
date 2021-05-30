@@ -1,8 +1,9 @@
 import Character from "./Character.js";
 
 export default class Fighter extends Character {
-    constructor(hp = 12, dmg = 4, mana = 40, state, name = "Grace") {
+    constructor(hp = 12, dmg = 4, mana = 40, state, name = "Grace", specialAttack = "darkVision") {
         super(hp, dmg, mana, state, name)
+        this.specialAttack = specialAttack;
     }
 
     // Create Grace special attack

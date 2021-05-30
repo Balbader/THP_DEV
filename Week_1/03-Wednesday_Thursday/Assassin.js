@@ -2,8 +2,9 @@ import Character from "./Character.js";
 //import Turn from "./Turn.js";
 
 export default class Assassin extends Character {
-    constructor(hp = 6, dmg = 6, mana = 20, state, name = "Carl") {
+    constructor(hp = 6, dmg = 6, mana = 20, state, name = "Carl", specialAttack = "shadowHit") {
         super(hp, dmg, mana, state, name)
+        this.specialAttack = specialAttack;
     }
 
     // Create Carl special attack
@@ -14,7 +15,7 @@ export default class Assassin extends Character {
             victim.takeDamage(7);
             this.targetPlayer = victim;
 
-            if (this.targetPlayer.state === PLAYING) {
+            if (this.specialAttack.targetPlayer.state === PLAYING) {
                 this.takeDamage(7);
                 console.log(`${this.name} looses 7 life points as he did not kill ${victim.name}.}`);
             }

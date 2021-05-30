@@ -1,8 +1,9 @@
 import Character from "./Character.js";
 
 export default class Monk extends Character {
-    constructor(hp = 8, dmg = 2, mana = 200, state, name = "Moana") {
+    constructor(hp = 8, dmg = 2, mana = 200, state, name = "Moana", specialAttack = "heal") {
         super(hp, dmg, mana, state, name)
+        this.specialAttack = specialAttack;
     }
 
     // Create Torvi special attack

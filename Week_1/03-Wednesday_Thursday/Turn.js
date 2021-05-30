@@ -12,7 +12,7 @@ export default class Turn extends Game {
     }
 
     // Make sure that players are present in game
-    targetPlayer = (playersBatch = Character.instances, i, playerAttacked = "") => {
+    targetPlayer(playersBatch = Character.instances, i, playerAttacked = "") {
         if (playersBatch.filter(player => player.name.toLowerCase()
             !== playersBatch[i].name.toLowerCase()).find(player => player.name.toLowerCase()
                 === playerAttacked.toLowerCase() === undefined)) {
@@ -24,7 +24,6 @@ export default class Turn extends Game {
 
     // Initiate new turn and run turn
     startTurn() {
-        let playersBatch = Character.shufflePlayer();
         alert(`Round ${this.turnNbr}`);
 
         for (let i = playersBatch.length -1; i >= 0; i--) {

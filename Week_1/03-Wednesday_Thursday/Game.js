@@ -64,11 +64,12 @@ export default class Game {
             while (newCharacterClass !== "fighter" && newCharacterClass !== "assassin"
                 && newCharacterClass !== "monk" && newCharacterClass !== "paladin"
                 && newCharacterClass !== "berzerker") {
-                newCharacterClass = prompt("ERROR: Unkown Character Class. Please try again.");
+                newCharacterClass = prompt("ERROR: Unkown Character Class. Please try again.\n Which Character Class do you want your Character to be? (please enter selection) Fighter, Assassin, Monk, Paladin, Berzerker");
+                newCharacterClass = newCharacterClass.toLowerCase();
             }
 
             let newCharacterName = prompt("Enter Character Name:");
-            this.newPlayer(playerClass, newPlayerName);
+            //this.newPlayer(playerClass, newPlayerName);
         }
 
         while (!this.gameEnded()) {
