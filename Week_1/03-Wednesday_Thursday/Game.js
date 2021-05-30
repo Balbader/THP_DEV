@@ -21,27 +21,27 @@ export default class Game {
     }
 
     newPlayer = (playerClass, newPlayerName) => {
-        if (playerClass === "Fighter") {
+        if (playerClass === "fighter" || 1) {
             let newPlayer = new Fighter(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
 
-        if (playerClass === "Assassin") {
+        if (playerClass === "assassin" || 2) {
             let newPlayer = new Fighter(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
 
-        if (playerClass === "Monk") {
+        if (playerClass === "monk" || 3) {
             let newPlayer = new Fighter(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
 
-        if (playerClass === "Paladin") {
+        if (playerClass === "paladin" || 4) {
             let newPlayer = new Fighter(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
 
-        if (playerClass === "Berzerker") {
+        if (playerClass === "berzerker" || 5) {
             let newPlayer = new Fighter(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
@@ -51,7 +51,7 @@ export default class Game {
         let addANewCharacter = prompt("Would you like to add a player to the game? (y/n)");
 
         if (addANewCharacter === "y" || addANewCharacter === "yes") {
-            let newPlayerClass = prompt ("Which Character Class do you want your Character to be?");
+            let newCharacterClass = prompt ("Which Character Class do you want your Character to be?(enter class number) 1: Fighter, 2: Assassin, 3: Monk, 4: Paladin, 5: Berzerker");
         }
     }
 }
