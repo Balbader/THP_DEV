@@ -4,7 +4,7 @@ import Berzerker from "./Berzerker.js";
 import Assassin from "./Assassin.js";
 import Monk from "./Monk.js";
 import Paladin from "./Paladin.js";
-//import Game from "./Game.js";
+import Game from "./Game.js";
 
 // Fighter
 let grace = new Fighter;
