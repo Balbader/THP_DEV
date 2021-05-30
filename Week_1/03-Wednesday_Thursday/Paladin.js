@@ -1,16 +1,22 @@
 import Character from "./Character.js";
 
-class Paladin extends Character {
-    constructor(hp = 16, dmg = 3, mana = 160, state, name = "Bjorn The Healer") {
+export default class Paladin extends Character {
+    constructor(hp = 16, dmg = 3, mana = 160, state, name = "Ulder") {
         super(hp, dmg, mana, state, name)
     }
 
-    // Create Bjorn special attack
+    // Create Ulder special attack
     healingLighing(victim) {
-        console.log(`!!! ${this.name} invoked their special attack !!!`);
-        let damage = 4;
-        victim.takeDamage(damage);
-        this.hp = this.hp + 5;
-        this.mana = this.mana - 40;
+        if (this.mana >= 40 && victim.isAlive()) {
+            this.mana -= 40;
+            victim.takeDamage(4);
+            this.hp += 5;
+            if (this.hp >= 16) {
+                this.hp = 16;
+            }
+            return 4;
+        } else {
+            console.log("You do not have enough mana points to invoke this spell.");
+        }
     }
 }
