@@ -1,4 +1,5 @@
 import Game from "./Game.js";
+import Character from "./Character.js";
 
 export default class Turn extends Game {
     constructor(turnNbr = 1, turnLeft) {
@@ -25,6 +26,8 @@ export default class Turn extends Game {
     // Initiate new turn and run turn
     startTurn() {
         alert(`Round ${this.turnNbr}`);
+        let playersBatch = Character.selectRandomPlayer();
+        console.log(playersBatch); // Output empty array
 
         for (let i = playersBatch.length -1; i >= 0; i--) {
             let playerAttacked = prompt(`It's ${playersBatch[i].name} turn. Who do you want to attack?`);
