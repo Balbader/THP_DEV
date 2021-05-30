@@ -1,3 +1,5 @@
+import Character from "./Character.js";
+
 export default class Game {
     constructor(turnLeft = 10) {
         this.turnLeft = turnLeft;
