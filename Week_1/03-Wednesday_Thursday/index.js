@@ -26,3 +26,5 @@ Character.instances.push(carl);
 let ulder = new Paladin;
 Character.instances.push(ulder);
 console.table(Character.instances);
+
+let newGame = new Game;
