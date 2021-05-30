@@ -21,27 +21,27 @@ export default class Game {
     }
 
     newPlayer = (playerClass, newPlayerName) => {
-        if (playerClass === "fighter" || 1) {
+        if (playerClass === "fighter") {
             let newPlayer = new Fighter(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
 
-        if (playerClass === "assassin" || 2) {
+        if (playerClass === "assassin") {
             let newPlayer = new Fighter(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
 
-        if (playerClass === "monk" || 3) {
+        if (playerClass === "monk") {
             let newPlayer = new Fighter(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
 
-        if (playerClass === "paladin" || 4) {
+        if (playerClass === "paladin") {
             let newPlayer = new Fighter(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
 
-        if (playerClass === "berzerker" || 5) {
+        if (playerClass === "berzerker") {
             let newPlayer = new Fighter(`${newPlayerName}`);
             Character.instances.push(newPlayer);
         };
@@ -51,7 +51,34 @@ export default class Game {
         let addANewCharacter = prompt("Would you like to add a player to the game? (y/n)");
 
         if (addANewCharacter === "y" || addANewCharacter === "yes") {
-            let newCharacterClass = prompt ("Which Character Class do you want your Character to be?(enter class number) 1: Fighter, 2: Assassin, 3: Monk, 4: Paladin, 5: Berzerker");
+            let newCharacterClass = prompt ("Which Character Class do you want your Character to be? (please enter selection) Fighter, Assassin, Monk, Paladin, Berzerker");
+            newCharacterClass = newCharacterClass.toLowerCase();
+
+            while (newCharacterClass !== "fighter" && newCharacterClass !== "assassin"
+                && newCharacterClass !== "monk" && newCharacterClass !== "paladin"
+                && newCharacterClass !== "berzerker") {
+                newCharacterClass = prompt("ERROR: Unkown Character Class. Please try again.")
+            }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
