@@ -49,33 +49,11 @@ export default class Turn extends Game {
         }
 
         let stillAlive = playersBatch.filter(player => player.isAlive());
+        stillAlive.map(player => {
+            console.log(`\n ${player.name} is still standing with ${player.hp} health points and ${player.mana} points remaining.`);
+        });
+        this.newRound();
+        this.newTurn();
+        return stillAlive;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
