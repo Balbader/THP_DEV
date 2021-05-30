@@ -1,5 +1,4 @@
 import Game from "./Game.js";
-import Character from "./Character.js";
 
 export default class Turn extends Game {
     constructor(turnNbr = 1, turnLeft) {
