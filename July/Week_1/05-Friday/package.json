@@ -1,0 +1,13 @@
+{
+  "name": "05-friday",
+  "version": "1.0.0",
+  "description": "Petit projet pour la formation THP Next, pour la semaine sur JS.",
+  "main": "data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
