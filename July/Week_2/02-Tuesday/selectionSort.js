@@ -25,10 +25,3 @@ const selectionSort = (array) => {
     }
     return arr;
 }
-
-/*
-let arr = [12, 11, 13, 5, 6 ];
-
-console.log("arr: ", arr);
-console.log(selectionSort(arr));
-*/
