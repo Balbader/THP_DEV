@@ -1,3 +1,5 @@
+import data from "./data.js";
+
 const keywords = [];
 
 let currentKeywords = [];
@@ -29,9 +31,9 @@ const allKeywords = keywordsCategories.reduce((prevKeywords, category) => [
 
 /* =============================================================================
  * If the keyword is present in the keywords array to take into account and we toggle the checkbox, it means
- * the checkbox is now unchecked, so we remove the keyword from the keywords array so it is not taken in account.
- * Otherwise, it means that we added a new keyword, or we re-checked a checkbox. So we add the
- * keyword in the keywords list to take in account.
+ * the checkbox is now unchecked, therfore we are removing the keyword from the keywords array so it is not taken in account.
+ * Otherwise, it means that we added a new keyword, or we re-checked a checkbox.
+ * So we add the keyword in the keywords list to take in account.
  */
 const toggleKeyword = (keyword) => {
     if (currentKeywords.includes(keyword)) {
@@ -83,6 +85,15 @@ const addNewKeyword = (label, keyword) => {
 // TODO: Modify this function to display only articles that contain at least one of the selected keywords.
 const reloadArticles = () => {
     document.querySelector('.articlesList').innerHTML = '';
+
+    const findMatches = (wordToMatch, list) => {
+        return list.filter(keyword => {
+            //Make sure the article matches what was searched
+            // 1. Create a new Regular Expression and assign it to a variable
+            const regex = new RegExp(wordToMatch, 'gi'); //'gi' g = global - i = case insensitive
+            return keyword.titre.match(regex) || keyword.tags.match(regex);
+        });
+    }
 
     const articlesToShow = data.articles;
     articlesToShow.forEach((article) => {
