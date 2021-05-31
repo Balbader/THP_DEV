@@ -26,13 +26,13 @@ const allKeywords = keywordsCategories.reduce((prevKeywords, category) => [
     ...category.keywords
 ], []);
 
-/*
- * If the keyword is present in keywords to take into account and we toggle the checkbox, it means
- * the checkbox is now unchecked, so we remove the keyword from keywords to take in account.
+
+/* =============================================================================
+ * If the keyword is present in the keywords array to take into account and we toggle the checkbox, it means
+ * the checkbox is now unchecked, so we remove the keyword from the keywords array so it is not taken in account.
  * Otherwise, it means that we added a new keyword, or we re-checked a checkbox. So we add the
  * keyword in the keywords list to take in account.
 */
-
 const toggleKeyword = (keyword) => {
     if (currentKeywords.includes(keyword)) {
         currentKeywords = currentKeywords.filter((currentKeyword) => currentKeyword !== keyword);
@@ -42,13 +42,14 @@ const toggleKeyword = (keyword) => {
 
     reloadArticles();
 };
-/*
+
+
+/* =============================================================================
  * The first argument is the keyword's label, what will be visible by the user.
  * It needs to handle uppercase, special characters, etc.
  * The second argument is the value of the checkbox. To be sure to not have bugs, we generally
  * put it in lowercase and without special characters.
 */
-
 const addNewKeyword = (label, keyword) => {
     resetInput();
 
@@ -76,6 +77,8 @@ const addNewKeyword = (label, keyword) => {
     resetKeywordsUl();
 };
 
+
+/* =============================================================================
 /* We reload the articles depends of the currentKeywords */
 // TODO: Modify this function to display only articles that contain at least one of the selected keywords.
 const reloadArticles = () => {
