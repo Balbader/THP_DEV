@@ -16,7 +16,6 @@ const bubbleSort = ( arr, n) => {
 
             }
         }
-
     }
 }
 
