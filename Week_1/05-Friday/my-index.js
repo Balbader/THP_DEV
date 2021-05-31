@@ -32,7 +32,7 @@ const allKeywords = keywordsCategories.reduce((prevKeywords, category) => [
  * the checkbox is now unchecked, so we remove the keyword from the keywords array so it is not taken in account.
  * Otherwise, it means that we added a new keyword, or we re-checked a checkbox. So we add the
  * keyword in the keywords list to take in account.
-*/
+ */
 const toggleKeyword = (keyword) => {
     if (currentKeywords.includes(keyword)) {
         currentKeywords = currentKeywords.filter((currentKeyword) => currentKeyword !== keyword);
@@ -49,7 +49,7 @@ const toggleKeyword = (keyword) => {
  * It needs to handle uppercase, special characters, etc.
  * The second argument is the value of the checkbox. To be sure to not have bugs, we generally
  * put it in lowercase and without special characters.
-*/
+ */
 const addNewKeyword = (label, keyword) => {
     resetInput();
 
@@ -79,11 +79,11 @@ const addNewKeyword = (label, keyword) => {
 
 
 /* =============================================================================
-/* We reload the articles depends of the currentKeywords */
+    /* We reload the articles depends of the currentKeywords */
 // TODO: Modify this function to display only articles that contain at least one of the selected keywords.
 const reloadArticles = () => {
     document.querySelector('.articlesList').innerHTML = '';
-    
+
     const articlesToShow = data.articles;
     articlesToShow.forEach((article) => {
         document.querySelector('.articlesList').innerHTML += `
@@ -96,14 +96,14 @@ const reloadArticles = () => {
 
 
 /* =============================================================================
-/* We empty the content from the <ul> under the text input */
+    /* We empty the content from the <ul> under the text input */
 const resetKeywordsUl = () => {
     document.querySelector('.inputKeywordsHandle ul').innerHTML = '';
 };
 
 
 /* =============================================================================
-/* We add a new article. The argument is an object with a title */
+    /* We add a new article. The argument is an object with a title */
 const addNewArticle = (article) => {
     document.querySelector('.articlesList').innerHTML += `
         <article>
@@ -114,12 +114,14 @@ const addNewArticle = (article) => {
 
 
 /* =============================================================================
-/* We empty the text input once the user submits the form */
+    /* We empty the text input once the user submits the form */
 const resetInput = () => {
     document.querySelector("input[type='text']").value = "";
 };
 
-/* Clean a keyword to lowercase and without special characters */
+
+/* =============================================================================
+    /* Clean a keyword to lowercase and without special characters */
 // TODO: Make the cleaning
 const cleanedKeyword = (keyword) => {
     const cleanedKeyword = keyword;
@@ -129,13 +131,14 @@ const cleanedKeyword = (keyword) => {
 
 
 /* =============================================================================
-// TODO: Modify this function to show the keyword containing a part of the word inserted
-// into the form (starting autocompletion at 3 letters).
-// TODO: We also show all the words from the same category than this word.
-// TODO: We show in first the keyword containing a part of the word inserted.
-// TODO: If a keyword is already in the list of presents hashtags (checkbox list), we don't show it.
+TODO: Modify this function to show the keyword containing a part of the word inserted
+into the form (starting autocompletion at 3 letters).
+TODO: We also show all the words from the same category than this word
+TODO: We show in first the keyword containing a part of the word inserted.
+TODO: If a keyword is already in the list of presents hashtags (checkbox list), we don't show it.
+*/
 const showKeywordsList = (value) => {
-    /* Starting at 3 letters inserted in the form, we do something */
+    //Starting at 3 letters inserted in the form, we do something
     if (value.length >= 3) {
         const keyWordUl = document.querySelector(".inputKeywordsHandle ul");
         resetKeywordsUl();
@@ -144,18 +147,17 @@ const showKeywordsList = (value) => {
          * On click, we add the keyword, like so:
          * keyWordUl.innerHTML += `
          * <li onclick="addNewKeyword(`${keyword}`, `${cleanedKeyword(keyword)}`)">${keyword}</li>`;
-        */
+         */
     }
 };
 
 
 /* =============================================================================
-/*
  * Once the DOM (you will se what is it next week) is loaded, we get back our form and
  * we prevent the initial behavior of the navigator: reload the page when it's submitted.
  * Then we call the function addNewKeyword() with 2 arguments: the label value to show,
  * and the checkbox value.
-*/
+ */
 window.addEventListener('DOMContentLoaded', () => {
     const inputElement = document.querySelector('input[type="text"]');
 
