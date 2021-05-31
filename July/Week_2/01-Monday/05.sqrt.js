@@ -16,4 +16,6 @@ const computeSquarRoot = (n) => {
     return sq;
 }
 
-console.log("Math.floor(computeSquarRoot(5)): ", Math.floor(computeSquarRoot(5)));
+console.log("Math.floor(computeSquarRoot(534)): ", Math.floor(computeSquarRoot(534)));
+console.log("Math.floor(computeSquarRoot(1)): ", Math.floor(computeSquarRoot(1)));
+console.log("Math.floor(computeSquarRoot(-1)): ", Math.floor(computeSquarRoot(-1)));

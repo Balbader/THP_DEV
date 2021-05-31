@@ -9,3 +9,6 @@ const computeFactorialRec = (n) => {
 }
 
 console.log("computeFactorialRec(5): ", computeFactorialRec(5));
+console.log("computeFactorialRec(0): ", computeFactorialRec(0));
+console.log("computeFactorialRec(-1): ", computeFactorialRec(-1));
+

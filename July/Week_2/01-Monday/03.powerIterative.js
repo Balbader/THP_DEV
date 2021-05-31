@@ -14,3 +14,5 @@ const computePowerIt = (n, p) => {
 }
 
 console.log("computePowerIt(5, 5): ", computePowerIt(5, 5));
+console.log("computePowerIt(5, -1): ", computePowerIt(5, -1));
+console.log("computePowerIt(-22, 2): ", computePowerIt(-22, 2));

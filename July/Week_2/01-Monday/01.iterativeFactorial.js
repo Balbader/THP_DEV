@@ -2,9 +2,9 @@ const computeFactorialIt = (n) => {
     let x = 1;
     let fact = 1;
 
-    if (x < 0) {
+    if (n < 0) {
         return 0;
-    } else if (x === 0) {
+    } else if (n === 0) {
         return 1;
     }
 
@@ -16,3 +16,5 @@ const computeFactorialIt = (n) => {
 }
 
 console.log("computeFactorialIt(5): ", computeFactorialIt(5));
+console.log("computeFactorialIt(0): ", computeFactorialIt(0));
+console.log("computeFactorialIt(-1): ", computeFactorialIt(-1));
