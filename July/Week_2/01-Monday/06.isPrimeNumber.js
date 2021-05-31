@@ -1,3 +1,4 @@
+// check if n is prime
 const isPrimeNumber = (n) => {
     let i = 2;
 
@@ -17,3 +18,25 @@ const isPrimeNumber = (n) => {
 
 console.log("isPrimeNumber(5): ", isPrimeNumber(5));
 console.log("isPrimeNumber(55): ", isPrimeNumber(55));
+
+// return smallest prime number >= n
+const findSupPrime = (n) => {
+    let x = n + 1;
+
+    if (isPrimeNumber(x) === true) {
+        return x;
+    }
+    if (isPrimeNumber(x) === false) {
+        findSupPrime(x);
+        while (isPrimeNumber(x) === false) {
+            if (isPrimeNumber(x) === true) {
+                return x;
+            }
+            x++;
+        }
+    }
+}
+
+console.log("findSupPrime(5): ", findSupPrime(5)); // output => 7
+console.log("findSupPrime(1): ", findSupPrime(1)); // output => 2
+console.log("findSupPrime(52): ", findSupPrime(53)); // output => 59
