@@ -94,11 +94,15 @@ const reloadArticles = () => {
     });
 };
 
+
+/* =============================================================================
 /* We empty the content from the <ul> under the text input */
 const resetKeywordsUl = () => {
     document.querySelector('.inputKeywordsHandle ul').innerHTML = '';
 };
 
+
+/* =============================================================================
 /* We add a new article. The argument is an object with a title */
 const addNewArticle = (article) => {
     document.querySelector('.articlesList').innerHTML += `
@@ -108,6 +112,8 @@ const addNewArticle = (article) => {
     `;
 };
 
+
+/* =============================================================================
 /* We empty the text input once the user submits the form */
 const resetInput = () => {
     document.querySelector("input[type='text']").value = "";
@@ -121,6 +127,8 @@ const cleanedKeyword = (keyword) => {
     return cleanedKeyword;
 };
 
+
+/* =============================================================================
 // TODO: Modify this function to show the keyword containing a part of the word inserted
 // into the form (starting autocompletion at 3 letters).
 // TODO: We also show all the words from the same category than this word.
@@ -140,6 +148,8 @@ const showKeywordsList = (value) => {
     }
 };
 
+
+/* =============================================================================
 /*
  * Once the DOM (you will se what is it next week) is loaded, we get back our form and
  * we prevent the initial behavior of the navigator: reload the page when it's submitted.
