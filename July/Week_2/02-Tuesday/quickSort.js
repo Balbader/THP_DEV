@@ -15,10 +15,3 @@ const quicksort = (array) => {
 
     return quicksort(left).concat(pivot, quicksort(right));
 };
-
-/*
-const arr = [64, 34, 25, 12, 22, 11, 90];
-console.log(arr);
-
-console.log(quicksort(arr));
-*/
