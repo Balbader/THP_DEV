@@ -18,14 +18,3 @@ const bubbleSort = ( arr, n) => {
         }
     }
 }
-
-/*
-// Driver program to test above functions
-const arr = [64, 34, 25, 12, 22, 11, 90];
-const n = 7;
-console.log("UnSorted array:");
-console.log(arr);
-
-bubbleSort(arr, n);
-console.log(arr);
-*/
