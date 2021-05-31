@@ -1,4 +1,4 @@
-const data = {
+export default {
     "articles": [
         {
             "titre": "Devenir influenceur en 2020, tous nos conseils (la 4ème va vous étonner :)",
