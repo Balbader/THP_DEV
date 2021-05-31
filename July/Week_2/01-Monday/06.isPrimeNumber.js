@@ -40,3 +40,4 @@ const findSupPrime = (n) => {
 console.log("findSupPrime(5): ", findSupPrime(5)); // output => 7
 console.log("findSupPrime(1): ", findSupPrime(1)); // output => 2
 console.log("findSupPrime(52): ", findSupPrime(53)); // output => 59
+console.log("findSupPrime(71): ", findSupPrime(71)); // output => 73
