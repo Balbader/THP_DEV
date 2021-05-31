@@ -19,12 +19,3 @@ function insertionSort(arr, n)
         arr[j + 1] = key;
     }
 }
-
-/*
-let arr = [12, 11, 13, 5, 6 ];
-let n = arr.length;
-
-console.log("arr berfore: ", arr);
-insertionSort(arr, n);
-console.log("arr after: ", arr);
-*/
