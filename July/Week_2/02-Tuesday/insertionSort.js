@@ -16,7 +16,7 @@ const insertionSort = (arr, n) => {
         arr[j + 1] = key;
         count++;
     }
-    return arr;
+    return (`Tri par insertion: ${count} comparaisons - ${arr}`);
 }
 
 module.exports = {
