@@ -19,6 +19,4 @@ const quicksort = (array) => {
     return (`Tri rapide: ${count} comparaisons - ${array}`);
 };
 
-module.exports = {
-    quicksort,
-}
+export default quicksort;
