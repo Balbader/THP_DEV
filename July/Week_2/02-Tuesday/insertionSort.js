@@ -1,6 +1,7 @@
 const insertionSort = (arr, n) => {
     let key;
     let j;
+    let count = 0;
 
     for (let i = 1; i < n; i++)
     {
@@ -13,7 +14,9 @@ const insertionSort = (arr, n) => {
             j = j - 1;
         }
         arr[j + 1] = key;
+        count++;
     }
+    return arr;
 }
 
 module.exports = {
