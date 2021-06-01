@@ -1,17 +1,20 @@
-const quicksort = (array) => {
+export default class QuickSort {
 
-    if (array.length <= 1) {
-        return array;
-    }
+    quicksort = (array) => {
 
-    var pivot = array[0];
+        if (array.length <= 1) {
+            return array;
+        }
 
-    var left = []; 
-    var right = [];
+        const pivot = array[0];
 
-    for (let i = 1; i < array.length; i++) {
-        array[i] > pivot ? right.push(array[i]) : left.push(array[i]);
-    }
+        const left = []; 
+        const right = [];
 
-    return quicksort(left).concat(pivot, quicksort(right));
-};
+        for (let i = 1; i < array.length; i++) {
+            array[i] > pivot ? right.push(array[i]) : left.push(array[i]);
+        }
+
+        return quicksort(left).concat(pivot, quicksort(right));
+    };
+}
