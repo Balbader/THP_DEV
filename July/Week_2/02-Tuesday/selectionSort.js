@@ -28,6 +28,4 @@ const selectionSort = (array) => {
     return (`Tri par selection: ${count} comparaisons - ${arr}`);
 }
 
-module.exports = {
-    selectionSort,
-}
+export default selectionSort;
