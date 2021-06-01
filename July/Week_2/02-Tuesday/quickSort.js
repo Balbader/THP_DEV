@@ -1,4 +1,5 @@
 const quicksort = (array) => {
+    let count = 0;
 
     if (array.length <= 1) {
         return array;
@@ -11,9 +12,11 @@ const quicksort = (array) => {
 
     for (let i = 1; i < array.length; i++) {
         array[i] > pivot ? right.push(array[i]) : left.push(array[i]);
+        count++;
     }
 
-    return quicksort(left).concat(pivot, quicksort(right));
+    quicksort(left).concat(pivot, quicksort(right));
+    return (`Tri rapide: ${count} comparaisons - ${array}`);
 };
 
 module.exports = {
