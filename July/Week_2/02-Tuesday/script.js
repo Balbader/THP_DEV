@@ -1,5 +1,6 @@
 const fs = require('fs');
 const bubble = require("./bubbleSort.js");
+const insert = require("./insertionSort.js");
 
 
 
