@@ -19,7 +19,7 @@ const launch = () => {
     turn.startTurn();
 }
 
-startNewGame.addEventListener("onclick", launch());
+startNewGame.addEventListener("onclick", launch);
 //stats.addEventListener("onclick", showStats());
 
 

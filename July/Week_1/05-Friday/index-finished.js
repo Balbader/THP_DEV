@@ -95,7 +95,7 @@ const reloadArticles = () => {
         });
     }
 
-    const articlesToShow = data.articles.findMatches();
+    const articlesToShow = data.articles;
     articlesToShow.forEach((article) => {
         document.querySelector('.articlesList').innerHTML += `
             <article>
