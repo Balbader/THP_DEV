@@ -1,14 +1,32 @@
-const fs = require('fs');
+import * as fs from 'fs';
 
+import bubbleSort from "./bubbleSort.js";
+/*
+import insertionSort from "./insertionSort.js";
+import selectionSort from "./selectionSort.js";
+import quicksort from "./quickSort.js";
+*/
+
+/* With require
+const fs = require ('fs');
 const { bubbleSort } = require("./bubbleSort.js");
 const { insertionSort } = require("./insertionSort.js");
 const { selectionSort } = require("./selectionSort.js");
 const { quicksort } = require("./quickSort.js");
+*/
 
-const data = fs.readFileSync('list.txt', 'utf8');
+const fileName = process.argv[2];
 
-let arr = [48, -2, 6, 12, 0, -4];
-console.log(bubbleSort(arr));
-console.log(insertionSort(arr, 6));
-console.log(selectionSort(arr, 6));
-console.log(quicksort(arr));
+
+const data = fs.readFileSync(fileName, 'utf8');
+const newData = data.split(" ");
+const finalData = newData.map((data) => {
+    return parseInt(data);
+});
+
+console.log(bubbleSort(finalData));
+/*
+console.log(insertionSort(finalData, finalData.length));
+console.log(selectionSort(finalData, finalData.length));
+console.log(quicksort(finalData));
+*/
