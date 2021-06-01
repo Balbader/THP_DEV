@@ -8,6 +8,7 @@ const selectionSort = (array) => {
     const arr = Array.from(array); // avoid side effects
     const len = arr.length;
     let min;
+    let count = 0;
 
     // remove boundary of unsorten subarray one by one
     for (let i = 0; i < len - 1; i++) {
@@ -22,8 +23,9 @@ const selectionSort = (array) => {
 
         // Swap the smallest element with the first element of the array
         swap(arr, i, min);
+        count++;
     }
-    return arr;
+    return (`Tri par selection: ${count} comparaisons - ${arr}`);
 }
 
 module.exports = {
