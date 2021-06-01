@@ -1,9 +1,9 @@
+/* Using import */
 import * as fs from 'fs';
-
 import bubbleSort from "./bubbleSort.js";
 import insertionSort from "./insertionSort.js";
 import selectionSort from "./selectionSort.js";
-//import quicksort from "./quickSort.js";
+import quicksort from "./quickSort.js";
 
 /* With require
 const fs = require ('fs');
@@ -25,4 +25,4 @@ const finalData = newData.map((data) => {
 console.log(bubbleSort(finalData));
 console.log(insertionSort(finalData, finalData.length));
 console.log(selectionSort(finalData, finalData.length));
-//console.log(quicksort(finalData));
+console.log(quicksort(finalData));
