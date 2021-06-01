@@ -19,6 +19,4 @@ const insertionSort = (arr, n) => {
     return (`Tri par insertion: ${count} comparaisons - ${arr}`);
 }
 
-module.exports = {
-    insertionSort,
-}
+export default insertionSort;
