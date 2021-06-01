@@ -23,7 +23,4 @@ const bubbleSort = (arr) => {
     return (`Tri à bulle: ${count} comparaisons - ${arr}`);
 }
 
-module.exports = {
-    swap,
-    bubbleSort,
-}
+export default bubbleSort;
