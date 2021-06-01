@@ -1,5 +1,4 @@
-insertionSort(arr, n) 
-{
+const insertionSort = (arr, n) => {
     let key;
     let j;
 
