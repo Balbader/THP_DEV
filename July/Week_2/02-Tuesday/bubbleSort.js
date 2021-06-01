@@ -1,12 +1,12 @@
+const swap = (array, x, y) => {
+    let temp = array[x];
+    array[x] = array[y];
+    array[y] = temp;
+}
+
 const bubbleSort = (arr) => {
     let count = 0;
     let n = arr.length;
-
-    const swap = (array, x, y) => {
-        let temp = array[x];
-        array[x] = array[y];
-        array[y] = temp;
-    }
 
     for (let i = 0; i < n-1; i++)
     {
@@ -24,5 +24,6 @@ const bubbleSort = (arr) => {
 }
 
 module.exports = {
+    swap,
     bubbleSort,
 }
