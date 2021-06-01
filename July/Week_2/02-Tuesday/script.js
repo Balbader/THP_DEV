@@ -1,14 +1,17 @@
-import * as fs from 'fs';
-import BubbleSort from "./bubbleSort.js";
-import quickSort from "./quickSort.js";
-import selectionSort from "./selectionSort.js";
-import insertionSort from "./insertionSort.js";
+const fs = require('fs');
+const bubble = require("./bubbleSort.js");
 
 
-fs.readFile('list.txt', 'utf8', (err, data) => {
-    if (err) {
-        console.error(err.message);
-        return ;
-    }
-    console.log(data);
-});
+
+
+
+
+/*
+import QuickSort from "./quickSort.js";
+import SelectionSort from "./selectionSort.js";
+import InsertionSort from "./insertionSort.js";
+*/
+
+const data = fs.readFileSync('list.txt', 'utf8');
+
+console.log(bubble.bubbleSort(data));
