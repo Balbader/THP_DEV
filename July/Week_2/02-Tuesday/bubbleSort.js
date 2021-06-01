@@ -1,11 +1,12 @@
-const swap = (arr, x, y) => {
-    let temp = arr[x];
-    arr[x] = arr[y];
-    arr[y] = temp;
-}
-
-const bubbleSort = (arr, n) => {
+const bubbleSort = (arr) => {
     let count = 0;
+    let n = arr.length;
+
+    const swap = (array, x, y) => {
+        let temp = array[x];
+        array[x] = array[y];
+        array[y] = temp;
+    }
 
     for (let i = 0; i < n-1; i++)
     {
