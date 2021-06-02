@@ -3,17 +3,17 @@
 // r = right of arr
 const merge = (arr, l, m, r) => {
 
-    const n1 = m - l + 1;
-    const n2 = r - m;
+    const len1 = m - l + 1;
+    const len2 = r - m;
 
     // Create temp arrays
-    const L = new Array(n1);
-    const R = new Array(n2);
+    const L = new Array(len1);
+    const R = new Array(len2);
 
     // Copy data to temp arrays L[] and R[]
-    for (let i = 0; i < n1; i++)
+    for (let i = 0; i < len1; i++)
         L[i] = arr[l + i];
-    for (let j = 0; j < n2; j++)
+    for (let j = 0; j < len2; j++)
         R[j] = arr[m + 1 + j];
 
     // Merge the temp arrays back into arr[l..r]
@@ -27,12 +27,11 @@ const merge = (arr, l, m, r) => {
     // Initial index of merged subarray
     let k = l;
 
-    while (i < n1 && j < n2) {
+    while (i < len1 && j < len2) {
         if (L[i] <= R[j]) {
             arr[k] = L[i];
             i++;
-        }
-        else {
+        } else {
             arr[k] = R[j];
             j++;
         }
@@ -41,7 +40,7 @@ const merge = (arr, l, m, r) => {
 
     // Copy the remaining elements of
     // L[], if there are any
-    while (i < n1) {
+    while (i < len1) {
         arr[k] = L[i];
         i++;
         k++;
@@ -49,7 +48,7 @@ const merge = (arr, l, m, r) => {
 
     // Copy the remaining elements of
     // R[], if there are any
-    while (j < n2) {
+    while (j < len2) {
         arr[k] = R[j];
         j++;
         k++;
@@ -58,7 +57,7 @@ const merge = (arr, l, m, r) => {
 
 // l is for left index and r is
 // right index of the sub-array
-// of arr to be sorted */
+// of arr to be sorted
 function mergeSort(arr,l, r){
     if(l>=r){
         return;//returns recursively
