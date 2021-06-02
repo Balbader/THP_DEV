@@ -59,13 +59,16 @@ const merge = (arr, l, m, r) => {
 // right index of the sub-array
 // of arr to be sorted
 function mergeSort(arr,l, r){
+    let count = 0;
     if(l>=r){
+        count++;
         return;//returns recursively
     }
     const m = l + parseInt((r-l)/2);
     mergeSort(arr,l,m);
     mergeSort(arr,m+1,r);
     merge(arr,l,m,r);
-    return arr;
+    return (`Tri Fusion: ${count} comparaisons - ${arr}`);;
 }
+
 export default mergeSort;
