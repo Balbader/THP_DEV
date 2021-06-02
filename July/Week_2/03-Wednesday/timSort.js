@@ -1,8 +1,3 @@
-/*
-import insertionSort from './insertionSort.js';
-import mergeSort from './mergeSort.js';
-*/
-
 const MIN_RUN = 64
 
 const insertionSort = (arr, l, r) => {
@@ -86,7 +81,4 @@ const timSort = (arr, n) => {
     return (`Tim Sort: ${count} comparaisons - ${arr}`);
 }
 
-
-const arrTest = [-2, 7, 15, -14, 0, 15, 0, 7, -7, -4, -13, 5, 8, -14, 12];
-console.log("timSort:");
-console.log(timSort(arrTest, arrTest.length));
+export default timSort;
