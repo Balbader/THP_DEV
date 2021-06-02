@@ -58,7 +58,7 @@ const merge = (arr, l, m, r) => {
 // l is for left index and r is
 // right index of the sub-array
 // of arr to be sorted
-function mergeSort(arr,l, r){
+const mergeSort = (arr,l, r) => {
     let count = 0;
     if(l>=r){
         count++;
@@ -68,7 +68,7 @@ function mergeSort(arr,l, r){
     mergeSort(arr,l,m);
     mergeSort(arr,m+1,r);
     merge(arr,l,m,r);
-    return (`Tri Fusion: ${count} comparaisons - ${arr}`);;
+    return (`Tri Fusion(Merge Sort): ${count} comparaisons - ${arr}`);;
 }
 
 export default mergeSort;
