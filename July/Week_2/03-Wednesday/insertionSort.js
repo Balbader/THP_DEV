@@ -1,20 +1,12 @@
-const insertionSort = (arr, n) => {
-    let key;
-    let j;
-
-    for (let i = 1; i < n; i++)
-    {
-        key = arr[i];
-        j = i - 1;
-
-        while (j >= 0 && arr[j] > key)
-        {
+const insertionSort = (arr, l, r) => {
+    for (let i = l + 1; i <= r; i++) {
+        let temp = arr[i];
+        let j = i -1;
+        while (j >= l && arr[j] > temp) {
             arr[j + 1] = arr[j];
-            j = j - 1;
+            j--;
         }
-        arr[j + 1] = key;
+        arr[j + 1] = temp;
     }
-    return arr;
 }
-
 export default insertionSort;
