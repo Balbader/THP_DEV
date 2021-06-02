@@ -78,7 +78,7 @@ const timSort = (arr, n) => {
         }
         count++;
     }
-    return (`Tim Sort: ${count} comparaisons - ${arr}`);
+    return (`Tri Tim Sort: ${count} comparaisons - ${arr}`);
 }
 
 export default timSort;
