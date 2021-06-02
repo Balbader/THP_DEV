@@ -69,26 +69,4 @@ function mergeSort(arr,l, r){
     merge(arr,l,m,r);
     return arr;
 }
-
-
-const arrTest = [-2, 7, 15, -14, 0, 15, 0, 7, -7, -4, -13, 5, 8, -14, 12, 123];
-console.log(mergeSort(arrTest, 0, arrTest.length - 1));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default mergeSort;
