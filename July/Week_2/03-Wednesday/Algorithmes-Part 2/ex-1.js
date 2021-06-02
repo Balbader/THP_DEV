@@ -22,3 +22,4 @@ const equalRes = (arr, res) => {
 }
 
 console.log(equalRes([43, 55, 8, 4], 9));
+console.log(equalRes([8, 3, 5, 1], 9));
