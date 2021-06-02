@@ -3,16 +3,6 @@
  * de 2 boucles imbriquées. */
 
 const checkHeight = (arr) => {
-    const temp = []
-    let index = 0;
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] < arr[i + 1]) {
-            continue ;
-        } else {
-            temp.push(arr[i]);
-        }
-    }
-    return temp.length;
 }
 
 const arr = [3, 7, 8, 3, 6, 1];
