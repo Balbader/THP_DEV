@@ -407,7 +407,7 @@ function gallopRight(value, array, start, length, hint, compare) {
     return offset;
 }
 
-class TimSort {
+export default class TimSort {
     array = null;
     compare = null;
     minGallop = DEFAULT_MIN_GALLOPING;
