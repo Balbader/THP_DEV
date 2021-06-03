@@ -83,19 +83,12 @@ const addNewKeyword = (label, keyword) => {
 /* =============================================================================
     /* We reload the articles depends of the currentKeywords */
 // TODO: Modify this function to display only articles that contain at least one of the selected keywords.
-const reloadArticles = () => {
+const reloadArticles = (keyword) => {
     document.querySelector('.articlesList').innerHTML = '';
 
-    const findMatches = (wordToMatch, list) => {
-        return list.filter(keyword => {
-            //Make sure the article matches what was searched
-            // 1. Create a new Regular Expression and assign it to a variable
-            const regex = new RegExp(wordToMatch, 'gi'); //'gi' g = global - i = case insensitive
-            return keyword.titre.match(regex) || keyword.tags.match(regex);
-        });
-    }
-
-    const articlesToShow = data.articles;
+    const articlesToShow = data.articles.filter((article) => {
+        return data.keywordsCategories.includes(keyword);
+    });
     articlesToShow.forEach((article) => {
         document.querySelector('.articlesList').innerHTML += `
             <article>
