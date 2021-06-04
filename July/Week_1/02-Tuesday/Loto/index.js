@@ -1,4 +1,3 @@
-console.log("test");
 // Define a random number
 const pullRandomNumberInclusive = (min, max) => {
     min = Math.ceil(min);
