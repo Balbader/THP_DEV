@@ -25,7 +25,8 @@ item.textContent = newMainCourses[0];
 console.log(item);
 
 
-console.log(displayMainCourses);
+
+
 
 /*
 for (let i = 0; i < newMainCourses.length; i++) {
