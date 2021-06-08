@@ -1,5 +1,5 @@
 body {
-    background-color: #191919;
+    background-color: white;
     color: white;
 }
 
@@ -8,9 +8,14 @@ body {
     margin-left: 20px;
 }
 
-.navbar-brand {
+.navbar, .navbar-brand {
     font-family: 'Dancing Script', cursive;
     font-size: 30px;
+}
+
+.navbar {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
 }
 
 #home-txt {
@@ -19,6 +24,21 @@ body {
 }
 
 #header {
-    background-image: url("https://w.wallhaven.cc/full/83/wallhaven-83rr62.jpg")
+    height: 500px;
+    background-image: url("https://cdn.discordapp.com/attachments/822541048059920435/851807466572087296/wallhaven-83rr62.jpg");
+    background-size: cover;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
 }
 
+#head-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+}
+
+
+#p-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+}
