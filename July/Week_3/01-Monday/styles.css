@@ -3,6 +3,8 @@ body {
     color: white;
 }
 
+/*=========== NavBar ================*/
+
 #logo {
     margin-right: 20px;
     margin-left: 20px;
@@ -18,6 +20,7 @@ body {
     font-size: 15px;
 }
 
+/*=========== Header ================*/
 #home-txt {
     display: block;
     z-index:12;
@@ -42,3 +45,55 @@ body {
     font-family: 'Dancing Script', cursive;
     font-size: 30px;
 }
+
+
+/*=========== Tabs ================*/
+.nav {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
