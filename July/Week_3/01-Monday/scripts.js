@@ -20,8 +20,8 @@ main_courses.map((element) => {
     newMainCourses.push(element);
 });
 
-const item = document.createElement('li');
-item.textContent = newMainCourses[0];
+const item = document.createElement('p');
+item.textContent = menu;
 console.log(item);
 
 
