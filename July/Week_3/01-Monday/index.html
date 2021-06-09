@@ -50,27 +50,27 @@
 
         <div class="container">
             <!-- ***************** Nav Tabs ***************** -->
-            <ul class="nav nav-tabs nav-justified" role="tablist" id="tabs">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
                 <li class="nav-item">
-                    <a class="nav-link active" role="presentation" href="#platDuJour">Plat du jour</a>
+                    <a data-toggle="tab" class="nav-link active" id="platDuJour-tab" href="#platDuJour" role="tab" aria-controls="platDuJour" aria-selected="true">Plat du jour</a>
                 </li>
                 <li class="nav-item">
-                    <a data-toggle="tab" class="nav-link" role="presentation" href="#mainCourses">Main Courses</a>
+                    <a data-toggle="tab" class="nav-link" id="mainCourses-tab" role="tab" href="#mainCourses" aria-controls="mainCourses" aria-selected="false">Main Courses</a>
                 </li>
                 <li class="nav-item">
-                    <a data-toggle="tab" class="nav-link" role="presentation" href="#techniques">Techniques</a>
+                    <a data-toggle="tab" class="nav-link" id="techniques-tab" role="tab" href="#techniques" aria-controls="techniques" aria-selected="false">Techniques</a>
                 </li>
                 <li class="nav-item">
-                    <a data-toggle="tab" class="nav-link" role="presentation" href="#sides">Sides</a>
+                    <a data-toggle="tab" class="nav-link" id="sides-tab" role="tab" href="#sides" aria-controls="sides" aria-selected="false">Sides</a>
                 </li>
                 <li class="nav-item">
-                    <a data-toggle="tab" class="nav-link" role="presentation" href="#seasoning">Seasoning</a>
+                    <a data-toggle="tab" class="nav-link" id="seasoning-tab" role="tab" href="#seasoning" aria-controls="seasoning" aria-selected="false">Seasoning</a>
                 </li>
             </ul>
 
             <!-- ***************** Tab Panes ***************** -->
             <div class="tab-content">
-                <div id="platDuJour" class="tab-pane fade in active">
+                <div id="platDuJour" class="tab-pane fade show active" role="tabpanel" aria-labelledby="platDuJour-tab">
                     <h3>Plat Du Jour</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
