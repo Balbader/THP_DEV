@@ -9,6 +9,7 @@
         <title>Le Resto du Bonheur</title>
     </head>
     <body>
+
         <!-- ***************** NavBar ***************** -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <img src="https://image.flaticon.com/icons/png/512/45/45266.png" id="logo" width="50" height="50" class="d-inline-block align-top" alt="logo">
@@ -50,50 +51,41 @@
 
         <div class="container">
             <!-- ***************** Nav Tabs ***************** -->
-            <ul class="nav nav-tabs nav-justified" role="tablist">
-                <li class="nav-item">
-                    <a data-toggle="tab" class="nav-link active" id="platDuJour-tab" href="#platDuJour" role="tab" aria-controls="platDuJour" aria-selected="true">Plat du jour</a>
-                </li>
-                <li class="nav-item">
-                    <a data-toggle="tab" class="nav-link" id="mainCourses-tab" role="tab" href="#mainCourses" aria-controls="mainCourses" aria-selected="false">Main Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a data-toggle="tab" class="nav-link" id="techniques-tab" role="tab" href="#techniques" aria-controls="techniques" aria-selected="false">Techniques</a>
-                </li>
-                <li class="nav-item">
-                    <a data-toggle="tab" class="nav-link" id="sides-tab" role="tab" href="#sides" aria-controls="sides" aria-selected="false">Sides</a>
-                </li>
-                <li class="nav-item">
-                    <a data-toggle="tab" class="nav-link" id="seasoning-tab" role="tab" href="#seasoning" aria-controls="seasoning" aria-selected="false">Seasoning</a>
-                </li>
-            </ul>
+            <nav>
+                <div class="nav nav-tabs nav-justified" id="nav-tab" role="tablist">
+                    <a class="nav-link active" id="nav-platDuJour-tab" data-toggle="tab" href="#nav-platDuJour" role="tab" aria-controls="nav-platDuJour" aria-selected="true">Plat du jour</a>
+                    <a class="nav-link" id="nav-mainCourses-tab" data-toggle="tab" role="tab" href="#nav-mainCourses" role="tab" aria-controls="nav-mainCourses" aria-selected="false">Main Courses</a>
+                    <a class="nav-link" id="nav-techniques-tab" data-toggle="tab" role="tab" href="#nav-techniques" role="tab" aria-controls="nav-techniques" aria-selected="false">Techniques</a>
+                    <a class="nav-link" id="nav-sides-tab" data-toggle="tab" role="tab" href="#nav-sides" role="tab" aria-controls="nav-sides" aria-selected="false">Sides</a>
+                    <a class="nav-link" id="nav-seasoning-tab" data-toggle="tab" role="tab" href="#nav-seasoning" role="tab" aria-controls="nav-seasoning" aria-selected="false">Seasoning</a>
+                </div>
+            </nav>
 
             <!-- ***************** Tab Panes ***************** -->
-            <div class="tab-content">
-                <div id="platDuJour" class="tab-pane fade show active" role="tabpanel" aria-labelledby="platDuJour-tab">
+            <div class="tab-content" id="nav-content">
+                <div class="tab-pane fade show active" id="nav-platDuJour" role="tabpanel" aria-labelledby="nav-platDuJour-tab">
                     <h3>Plat Du Jour</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
-                <div  id="mainCourses" class="tab-pane fade">
+                <div class="tab-pane fade" id="nav-mainCourses" role="tabpanel" aria-labelledby="nav-mainCourses-tab">
                     <h3>Main Courses</h3>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                 </div>
-                <div id="techniques" class="tab-pane fade">
+                <div class="tab-pane fade" id="nav-techniques" role="tabpanel" aria-labelledby="nav-techniques-tab">
                     <h3>Techniques</h3>
                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
                 </div>
-                <div id="sides" class="tab-pane fade">
+                <div class="tab-pane fade" id="nav-sides" role="tabpanel" aria-labelledby="nav-sides-tab">
                     <h3>Sides</h3>
                     <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                 </div>
-                <div id="seasoning" class="tab-pane fade">
+                <div class="tab-pane fade" id="nav-seasoning" role="tabpanel" aria-labelledby="nav-seasoning-tab">
                     <h3>Seasoning</h3>
                     <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
                 </div>
             </div>
 
         </div>
-
 
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
